@@ -1,0 +1,574 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Light Theme */
+    --cor-primaria-light: #1a1a1a;       /* Dark text/elements on light background */
+    --cor-secundaria-light: #ffffff;    /* White background for elements like cards/nav */
+    --cor-destaque-light: #007bff;       /* Brighter, more standard blue accent */
+    --cor-fundo-light: #f8f9fa;         /* Off-white background for the body */
+    --cor-texto-light: #343a40;         /* Dark grey text */
+    --sombra-light: 0 6px 12px rgba(0, 0, 0, 0.1);
+    --borda-sutil-light: #e0e0e0;
+
+    /* Default to Light Theme Variables */
+    --cor-primaria: var(--cor-primaria-light);
+    --cor-secundaria: var(--cor-secundaria-light);
+    --cor-destaque: var(--cor-destaque-light);
+    --cor-fundo: var(--cor-fundo-light);
+    --cor-texto: var(--cor-texto-light);
+    --sombra: var(--sombra-light);
+    --borda-sutil: var(--borda-sutil-light);
+
+    /* Typography */
+    --fonte-principal: 'Poppins', sans-serif;
+    --peso-normal: 400;
+    --peso-medio: 500;
+    --peso-negrito: 600;
+
+    /* Spacing */
+    --espacamento-base: 1rem; /* 16px */
+    --espacamento-navbar-altura: 70px;
+
+    /* Transitions */
+    --transicao-padrao: all 0.3s ease-in-out;
+
+    /* Borders */
+    --raio-borda-padrao: 8px;
+    --raio-borda-grande: 12px;
+
+    /* --- Variáveis para Expansão de Imagem --- */
+    --overlay-background: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    --imagem-expandida-max-altura: 90vh;
+    --imagem-expandida-max-largura: 90vw;
+    /* --------------------------------------------- */
+}
+
+[data-tema="dark"] {
+    /* Dark Theme */
+    --cor-primaria-dark: #e9ecef;       /* Light text/elements on dark background */
+    --cor-secundaria-dark: #2c2c2c;       /* Dark grey for elements like cards/nav */
+    --cor-destaque-dark: #0d6efd;       /* Slightly different blue for dark mode contrast */
+    --cor-fundo-dark: #181818;         /* Very dark background */
+    --cor-texto-dark: #ced4da;         /* Light grey text */
+    --sombra-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+    --borda-sutil-dark: #444444;
+
+    /* Override with Dark Theme Variables */
+    --cor-primaria: var(--cor-primaria-dark);
+    --cor-secundaria: var(--cor-secundaria-dark);
+    --cor-destaque: var(--cor-destaque-dark);
+    --cor-fundo: var(--cor-fundo-dark);
+    --cor-texto: var(--cor-texto-dark);
+    --sombra: var(--sombra-dark);
+    --borda-sutil: var(--borda-sutil-dark);
+
+    /* --- Variáveis para Expansão de Imagem (Dark Mode) --- */
+    --overlay-background: rgba(0, 0, 0, 0.9); /* Um pouco mais escuro no dark mode */
+    /* ---------------------------------------------------------- */
+}
+
+/* Global Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    font-size: 100%; /* Base font size (usually 16px) */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.7; /* Improved readability */
+    transition: var(--transicao-padrao);
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
+/* Navigation Bar */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    height: var(--espacamento-navbar-altura);
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Center menu links */
+    padding: 0 calc(var(--espacamento-base) * 2);
+    box-shadow: var(--sombra);
+    border-bottom: 1px solid var(--borda-sutil); /* Subtle separation */
+    z-index: 1000;
+    transition: var(--transicao-padrao);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--espacamento-base) * 2.5);
+    list-style: none;
+}
+
+.menu a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: var(--peso-medio);
+    padding: calc(var(--espacamento-base) * 0.5) calc(var(--espacamento-base) * 1);
+    border-radius: var(--raio-borda-padrao);
+    position: relative; /* For pseudo-element hover effect */
+    transition: color 0.3s ease;
+    overflow: hidden; /* Hide the pseudo-element initially */
+}
+
+.menu a::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--cor-destaque);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.menu a:hover {
+    color: var(--cor-destaque);
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- Modificação do Botão de Mudar Tema (Minimalista) --- */
+.glow-on-hover {
+    /* Removemos as propriedades do glow */
+    width: auto; /* Largura automática baseada no conteúdo */
+    height: auto; /* Altura automática */
+    padding: calc(var(--espacamento-base) * 0.5) calc(var(--espacamento-base) * 1); /* Padding similar aos links do menu */
+    border: 1px solid var(--borda-sutil); /* Borda sutil */
+    outline: none;
+    color: var(--cor-primaria); /* Cor do texto primária */
+    background-color: transparent; /* Fundo transparente */
+    cursor: pointer;
+    position: absolute; /* Mantém a posição na nav bar */
+    right: calc(var(--espacamento-base) * 2);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: var(--raio-borda-padrao);
+    overflow: hidden;
+    font-family: var(--fonte-principal);
+    font-weight: var(--peso-medio);
+    font-size: 0.9rem;
+    transition: var(--transicao-padrao); /* Transição para cores e borda */
+}
+
+/* Removemos completamente os pseudo-elementos ::before e ::after que criavam o glow */
+.glow-on-hover:before,
+.glow-on-hover:after {
+    display: none;
+}
+
+/* Efeito hover minimalista */
+.glow-on-hover:hover {
+    background-color: var(--cor-fundo); /* Fundo levemente diferente no hover */
+    border-color: var(--cor-destaque); /* Borda com a cor de destaque no hover */
+    color: var(--cor-destaque); /* Cor do texto de destaque no hover */
+}
+
+.glow-on-hover:active {
+    transform: translateY(-50%) scale(0.95); /* Efeito de "clicar" sutil */
+}
+
+/* Removemos a animação glowing, pois não é mais usada */
+/* @keyframes glowing { ... } */
+
+/* --- Fim da Modificação do Botão --- */
+
+
+/* Header / Hero Section */
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--espacamento-base) * 4) calc(var(--espacamento-base) * 2);
+    padding-top: calc(var(--espacamento-navbar-altura) + var(--espacamento-base) * 3); /* Ensure space below fixed nav */
+    background: linear-gradient(135deg, var(--cor-fundo), var(--cor-secundaria)); /* Subtle gradient */
+}
+
+.foto-perfil {
+    width: 220px; /* Slightly larger */
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: calc(var(--espacamento-base) * 2);
+    border: 6px solid transparent; /* Transparent border */
+    background: linear-gradient(var(--cor-fundo), var(--cor-fundo)) padding-box, /* Background color */
+                linear-gradient(45deg, var(--cor-destaque), #00aaff) border-box; /* Gradient border */
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.3); /* Accent color glow */
+}
+
+.cabecalho h1 {
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-base);
+    font-weight: var(--peso-negrito);
+}
+
+.cabecalho p {
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    max-width: 600px; /* Limit width of subtitle */
+}
+
+
+/* Content Sections */
+.sobre, .projetos, .contato {
+    padding: calc(var(--espacamento-base) * 5) calc(var(--espacamento-base) * 2); /* More vertical padding */
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--borda-sutil); /* Separate sections subtly */
+}
+.sobre { border-top: none; } /* No top border for the first section */
+
+.sobre-titulo, .projetos-titulo, .contatos-titulo {
+    text-align: center;
+    font-size: 2.8rem; /* Slightly larger */
+    font-weight: var(--peso-negrito);
+    margin-bottom: calc(var(--espacamento-base) * 4); /* More space below title */
+    color: var(--cor-destaque);
+    position: relative;
+    padding-bottom: calc(var(--espacamento-base) * 0.5);
+}
+
+/* Underline effect for titles */
+.sobre-titulo::after, .projetos-titulo::after, .contatos-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--cor-destaque);
+    border-radius: 2px;
+}
+
+.sobre p { /* Style paragraphs within sections */
+    max-width: 800px;
+    margin: 0 auto calc(var(--espacamento-base) * 1.5); /* Center text block and add bottom margin */
+    text-align: center; /* Center the about text */
+    font-size: 1.1rem;
+}
+
+/* Projects Section */
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min card width */
+    gap: calc(var(--espacamento-base) * 2.5); /* Increased gap */
+    margin-top: calc(var(--espacamento-base) * 2);
+}
+
+.projetos-card {
+    background: var(--cor-secundaria);
+    border-radius: var(--raio-borda-grande); /* Softer corners */
+    padding: calc(var(--espacamento-base) * 1.5);
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add shadow transition */
+    overflow: hidden; /* Ensure content fits */
+    border: 1px solid var(--borda-sutil);
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.projetos-card:hover {
+    transform: translateY(-10px) scale(1.02); /* More pronounced hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+[data-tema="dark"] .projetos-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+}
+
+.projetos-imagem {
+    width: 100%;
+    height: 220px; /* Slightly taller image */
+    object-fit: cover;
+    border-radius: var(--raio-borda-padrao); /* Match card radius */
+    margin-bottom: calc(var(--espacamento-base) * 1.5);
+    border: 1px solid var(--borda-sutil);
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+.projetos-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: calc(var(--espacamento-base) * 0.75);
+    color: var(--cor-primaria);
+    font-weight: var(--peso-negrito);
+}
+
+.projetos-card p {
+    font-size: 0.95rem;
+    margin-bottom: var(--espacamento-base); /* Space before potential links/tags */
+    flex-grow: 1; /* Allow paragraph to take up space */
+}
+
+/* Add styles for links/tags within cards if you add them */
+.projetos-card .tags {
+    margin-top: auto; /* Push tags to bottom */
+    padding-top: var(--espacamento-base);
+}
+.projetos-card .tag {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Contact Form */
+.formulario-contato {
+    max-width: 700px; /* Slightly wider form */
+    margin: 0 auto;
+    background-color: var(--cor-secundaria); /* Give form a background */
+    padding: calc(var(--espacamento-base) * 2.5);
+    border-radius: var(--raio-borda-grande);
+    box-shadow: var(--sombra);
+    border: 1px solid var(--borda-sutil);
+}
+
+.campo-form, .text-form {
+    width: 100%;
+    padding: calc(var(--espacamento-base) * 0.9);
+    margin-bottom: calc(var(--espacamento-base) * 1.5);
+    border: 1px solid var(--borda-sutil); /* Subtle border */
+    border-radius: var(--raio-borda-padrao);
+    background-color: var(--cor-fundo); /* Match body background slightly */
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-form:focus, .text-form:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus ring */
+}
+
+.text-form {
+    min-height: 150px; /* Taller text area */
+    resize: vertical; /* Allow vertical resize */
+}
+
+.btn-enviar {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: calc(var(--espacamento-base) * 0.9) calc(var(--espacamento-base) * 2);
+    border: none;
+    border-radius: var(--raio-borda-padrao);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: var(--peso-medio);
+    font-family: var(--fonte-principal);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-enviar:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+[data-tema="dark"] .btn-enviar:hover {
+    background-color: #2585fd; /* Lighter shade for dark mode hover */
+}
+
+.btn-enviar:active {
+    transform: translateY(0); /* Press down effect */
+}
+
+/* --- REGRAS PARA EXPANSÃO DE IMAGEM --- */
+
+/* O overlay que cobre a tela */
+.image-overlay {
+    position: fixed; /* Fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-background); /* Cor definida nas variáveis */
+    display: flex; /* Usar flexbox para centralizar a imagem */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    z-index: 2000; /* Alto z-index para ficar por cima de tudo */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transição suave */
+}
+
+/* Classe para mostrar o overlay (adicionada via JavaScript) */
+.image-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* A imagem dentro do overlay */
+.expanded-image {
+    display: block; /* Para que max-width/height funcionem corretamente */
+    max-width: var(--imagem-expandida-max-largura); /* Tamanho máximo */
+    max-height: var(--imagem-expandida-max-altura); /* Tamanho máximo */
+    object-fit: contain; /* Garante que a imagem inteira seja visível */
+    transform: scale(0.8); /* Começa um pouco menor */
+    opacity: 0; /* Inicialmente invisível */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Adicionar cursor pointer para fechar ao clicar na imagem */
+}
+
+/* Classe para mostrar e expandir a imagem (adicionada via JavaScript) */
+.image-overlay.visible .expanded-image {
+    transform: scale(1); /* Expande para o tamanho normal */
+    opacity: 1; /* Torna visível */
+}
+
+/* --- FIM DAS REGRAS DE EXPANSÃO --- */
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .projetos-caixa {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust card size */
+    }
+     .cabecalho h1 {
+        font-size: 2.5rem;
+    }
+    .cabecalho p {
+        font-size: 1.1rem;
+    }
+    .sobre-titulo, .projetos-titulo, .contatos-titulo {
+        font-size: 2.4rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 95%; /* Slightly smaller base font on medium screens */
+    }
+
+    .navegacao {
+        height: auto; /* Allow nav to grow */
+        flex-direction: column; /* Stack logo/brand and menu */
+        padding: var(--espacamento-base);
+        justify-content: flex-start; /* Align items to start */
+        position: relative; /* Change from fixed for simplicity or implement mobile menu toggle */
+        /* NOTE: A fixed header on mobile often requires JS for a proper hamburger menu */
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--espacamento-base);
+        margin-top: var(--espacamento-base); /* Space between potential logo/brand and menu */
+        width: 100%;
+    }
+
+    .menu a {
+        padding: calc(var(--espacamento-base) * 0.75) 0; /* Adjust padding for vertical layout */
+        text-align: center;
+        width: 80%; /* Make links wider */
+    }
+     .menu a::after { /* Adjust underline for centered text */
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: bottom center;
+    }
+     .menu a:hover::after {
+        transform: translateX(-50%) scaleX(1);
+        transform-origin: bottom center;
+    }
+
+
+    .glow-on-hover {
+        position: relative; /* Change from absolute */
+        right: auto; top: auto; transform: none; /* Reset positioning */
+        margin-top: calc(var(--espacamento-base) * 1.5); /* Space below menu items */
+        display: block; /* Ensure it takes block space */
+        margin-left: auto; /* Center button */
+        margin-right: auto;
+         /* Ajustar a posição para mobile se a nav não for mais fixed */
+        transform: none; /* Reset transform */
+        top: auto;
+    }
+
+    .cabecalho {
+        min-height: auto; /* Adjust height */
+        padding-top: calc(var(--espacamento-base) * 4); /* Adjust top padding if nav is no longer fixed */
+        padding-bottom: calc(var(--espacamento-base) * 4);
+    }
+     .cabecalho h1 {
+        font-size: 2.2rem;
+    }
+    .cabecalho p {
+        font-size: 1rem;
+    }
+     .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    .sobre, .projetos, .contato {
+        padding: calc(var(--espacamento-base) * 4) var(--espacamento-base); /* Less horizontal padding */
+    }
+
+    .sobre-titulo, .projetos-titulo, .contatos-titulo {
+        font-size: 2rem;
+        margin-bottom: calc(var(--espacamento-base) * 3);
+    }
+     .sobre-titulo::after, .projetos-titulo::after, .contatos-titulo::after {
+        width: 60px;
+        height: 3px;
+    }
+
+
+    .projetos-caixa {
+        grid-template-columns: 1fr; /* Single column */
+        gap: calc(var(--espacamento-base) * 2);
+    }
+
+    .formulario-contato {
+        padding: calc(var(--espacamento-base) * 2);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 90%; /* Even smaller base font */
+    }
+    .cabecalho h1 {
+        font-size: 2rem;
+    }
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+     .sobre-titulo, .projetos-titulo, .contatos-titulo {
+        font-size: 1.8rem;
+    }
+}

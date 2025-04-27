@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portifólio - Henzon</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+</head>
+
+<body>
+  <nav class="navegacao">
+    <ul class="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <!-- Botão de Alternar Tema -->
+    <button id="theme-toggle" class="glow-on-hover">Tema Escuro</button>
+
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <div>
+      <img src="Minha-foto.JPEG" alt="Foto de Henzon" class="foto-perfil">
+      <h1>Henzon Tadlly</h1>
+      <p>Desenvolvedor Front-End</p>
+    </div>
+  </main>
+
+  <section id="sobre" class="sobre">
+    <h2 class="sobre-titulo">Sobre Mim</h2>
+    <div class="sobre-caixa">
+      <p class="sobre-paragrafo">
+        Sou Henzon Tadlly, desenvolvedor Front-End com sólida experiência em TypeScript, JavaScript (React, Node.js),
+        Python (Django), HTML e CSS. Apaixonado por tecnologia e resolução de desafios, dedico-me a projetar e
+        implementar soluções eficientes e escaláveis, mantendo-me em constante aprimoramento e alinhado às melhores
+        práticas do mercado.
+      </p>
+    </div>
+  </section>
+
+  <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+      <div class="projetos-card">
+        <img src="Cafeteria.png" alt="Projeto 1" class="projetos-imagem">
+        <h3 class="info-projetos">Cafeteria</h3>
+        <p class="paragrafo-projetos">
+          Site para uma cafeteria moderna, com estilo minimalista e moderno. Projeto simples, porém eficaz.
+        </p>
+      </div>
+      <div class="projetos-card">
+        <img src="cadastro.png" alt="Projeto 2" class="projetos-imagem">
+        <h3 class="info-projetos">Cadastro</h3>
+        <p class="paragrafo-projetos">
+          Sistema de cadastro utilizando Back-End em Node, Front-End em React e banco de dados MongoDB. Site responsivo
+          e moderno.
+        </p>
+      </div>
+      <div class="projetos-card">
+        <img src="Tradutor.png" alt="Projeto 3" class="projetos-imagem">
+        <h3 class="info-projetos">Tradutor</h3>
+        <p class="paragrafo-projetos">
+          Site de tradução, estilo Google Tradutor, utilizando Node para o Back-End e React com Tailwind para o
+          Front-End. Site responsivo e eficiente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2 class="contatos-titulo">Contatos</h2>
+    <form id="contact-form" class="formulario-contato">
+      <input type="text" name="from_name" placeholder="Seu Nome" class="campo-form" required>
+      <input type="email" name="reply_to" placeholder="Seu E-mail" class="campo-form" required>
+      <textarea name="message" placeholder="Sua Mensagem" class="text-form" required></textarea>
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <div class="image-overlay">
+    <img src="" alt="Imagem Expandida do Projeto" class="expanded-image">
+  </div>
+</body>
+
+</html>
