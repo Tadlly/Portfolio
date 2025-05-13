@@ -8,14 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
   <nav class="navegacao">
-    <a href="#inicio" class="nav-brand">HenzonT.</a> <ul class="menu">
+    <a href="#inicio" class="nav-brand">HenzonT.</a>
+    <ul class="menu">
       <li><a href="#inicio">Início</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#projetos">Projetos</a></li>
@@ -24,23 +27,23 @@
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
       <i class="fas fa-sun"></i> </button>
     <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu">
-        <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </button>
   </nav>
 
   <div id="mobile-menu" class="mobile-menu">
-      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Fechar menu">
-          <i class="fas fa-times"></i>
-      </button>
-      <ul class="mobile-menu-links">
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-      </ul>
-       <button id="mobile-theme-toggle" class="theme-toggle-btn mobile-theme-toggle-btn" aria-label="Alternar tema">
-         <i class="fas fa-sun"></i>
-       </button>
+    <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Fechar menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="mobile-menu-links">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button id="mobile-theme-toggle" class="theme-toggle-btn mobile-theme-toggle-btn" aria-label="Alternar tema">
+      <i class="fas fa-sun"></i>
+    </button>
   </div>
 
   <main id="inicio" class="cabecalho section-padding">
@@ -49,12 +52,14 @@
       <h1 class="animatable" data-delay="100">Henzon Tadlly</h1>
       <p class="animatable" data-delay="200">Desenvolvedor Front-End</p>
       <div class="header-social-links animatable" data-delay="300">
-            <a href="https://github.com/Tadlly" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/henzon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-       <a href="curriculo.pdf" download="curriculo.pdf" class="btn btn-primary animatable" data-delay="400">
-         Download CV <i class="fas fa-download"></i>
-       </a>
+        <a href="https://github.com/Tadlly" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/henzon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
+      </div>
+      <a href="curriculo.pdf" download="curriculo.pdf" class="btn btn-primary animatable" data-delay="400">
+        Download CV <i class="fas fa-download"></i>
+      </a>
     </div>
   </main>
 
@@ -69,114 +74,161 @@
       </p>
     </div>
   </section>
+  <section id="habilidades" class="habilidades section-padding">
+   <h2 class="section-title animatable">Minhas Habilidades</h2>
+   <div class="habilidades-container animatable" data-delay="100">
+      <div class="habilidade-categoria">
+        <h3>Frontend</h3>
+         <ul class="lista-habilidades">
+     <li><i class="fab fa-html5"></i> HTML5</li>
+           <li><i class="fab fa-css3-alt"></i> CSS3</li>
+           <li><i class="fab fa-js-square"></i> JavaScript (ES6+)</li>
+           <li><i class="fab fa-react"></i> React</li>
+           <li><i class="fab fa-vuejs"></i> </li>
+           <li><i class="fas fa-code"></i> TypeScript</li>
+           </ul>
+         </div>
+       <div class="habilidade-categoria">
+         <h3>Backend</h3>
+         <ul class="lista-habilidades">
+           <li><i class="fab fa-node-js"></i> Node.js</li>
+           <li><i class="fab fa-python"></i> Python (Django)</li>
+           </ul>
+         </div>
+       <div class="habilidade-categoria">
+         <h3>Ferramentas & Outros</h3>
+         <ul class="lista-habilidades">
+           <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+           <li><i class="fas fa-cogs"></i> APIs RESTful</li>
+           </ul>
+         </div>
+       </div>
+     <p class="habilidades-aprendendo animatable" data-delay="200">
+       Atualmente aprofundando conhecimentos em: Angular.
+       </p>
+  </section>
 
   <section id="projetos" class="projetos section-padding">
     <h2 class="section-title animatable">Meus Projetos</h2>
     <div class="projetos-caixa">
       <div class="projetos-card animatable">
         <div class="projetos-imagem-container">
-             <img src="Cafeteria.png" alt="Projeto Cafeteria" class="projetos-imagem">
-             <div class="projetos-imagem-overlay">
-                 <i class="fas fa-search-plus"></i> Ver Imagem
-             </div>
+          <img src="Cafeteria.png" alt="Projeto Cafeteria" class="projetos-imagem">
+          <div class="projetos-imagem-overlay">
+            <i class="fas fa-search-plus"></i> Ver Imagem
+          </div>
         </div>
         <div class="projetos-card-content">
-             <h3 class="info-projetos">Cafeteria</h3>
-             <p class="paragrafo-projetos">
-               Site para uma cafeteria moderna, com estilo minimalista e moderno. Projeto simples, porém eficaz.
-             </p>
-             <div class="projetos-tags">
-                 <span class="tag">HTML</span>
-                 <span class="tag">CSS</span>
-                 <span class="tag">JavaScript</span>
-             </div>
-             <div class="projetos-links">
-                 <a href="https://tadlly.github.io/Cafeteria/" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Demo Online"><i class="fas fa-external-link-alt"></i> Demo</a>
-                 <a href="https://github.com/Tadlly/Cafeteria" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Código no GitHub"><i class="fab fa-github"></i> Código</a>
-             </div>
+          <h3 class="info-projetos">Cafeteria</h3>
+          <p class="paragrafo-projetos">
+            Site para uma cafeteria moderna, com estilo minimalista e moderno. Projeto simples, porém eficaz.
+          </p>
+          <div class="projetos-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="projetos-links">
+            <a href="https://tadlly.github.io/Cafeteria/" target="_blank" rel="noopener noreferrer" class="projeto-link"
+              title="Ver Demo Online"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="https://github.com/Tadlly/Cafeteria" target="_blank" rel="noopener noreferrer" class="projeto-link"
+              title="Ver Código no GitHub"><i class="fab fa-github"></i> Código</a>
+          </div>
         </div>
       </div>
       <div class="projetos-card animatable" data-delay="100">
-         <div class="projetos-imagem-container">
-              <img src="cadastro.png" alt="Projeto Cadastro" class="projetos-imagem">
-               <div class="projetos-imagem-overlay">
-                 <i class="fas fa-search-plus"></i> Ver Imagem
-             </div>
-         </div>
-         <div class="projetos-card-content">
-            <h3 class="info-projetos">Cadastro</h3>
-            <p class="paragrafo-projetos">
-              Sistema de cadastro utilizando Back-End em Node, Front-End em React e banco de dados MongoDB. Site responsivo e moderno.
-            </p>
-            <div class="projetos-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">CSS</span>
-            </div>
-            <div class="projetos-links">
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Demo Online"><i class="fas fa-external-link-alt"></i> Demo</a>
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Código no GitHub"><i class="fab fa-github"></i> Código</a>
-            </div>
+        <div class="projetos-imagem-container">
+          <img src="cadastro.png" alt="Projeto Cadastro" class="projetos-imagem">
+          <div class="projetos-imagem-overlay">
+            <i class="fas fa-search-plus"></i> Ver Imagem
+          </div>
+        </div>
+        <div class="projetos-card-content">
+          <h3 class="info-projetos">Cadastro</h3>
+          <p class="paragrafo-projetos">
+            Sistema de cadastro utilizando Back-End em Node, Front-End em React e banco de dados MongoDB. Site
+            responsivo e moderno.
+          </p>
+          <div class="projetos-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">CSS</span>
+          </div>
+          <div class="projetos-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Demo Online"><i
+                class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Código no GitHub"><i
+                class="fab fa-github"></i> Código</a>
+          </div>
         </div>
       </div>
       <div class="projetos-card animatable" data-delay="200">
         <div class="projetos-imagem-container">
-              <img src="Tradutor.png" alt="Projeto Tradutor" class="projetos-imagem">
-               <div class="projetos-imagem-overlay">
-                 <i class="fas fa-search-plus"></i> Ver Imagem
-             </div>
+          <img src="Tradutor.png" alt="Projeto Tradutor" class="projetos-imagem">
+          <div class="projetos-imagem-overlay">
+            <i class="fas fa-search-plus"></i> Ver Imagem
+          </div>
         </div>
         <div class="projetos-card-content">
-             <h3 class="info-projetos">Tradutor</h3>
-             <p class="paragrafo-projetos">
-               Site de tradução, estilo Google Tradutor, utilizando Node para o Back-End e React com Tailwind para o Front-End. Site responsivo e eficiente.
-             </p>
-              <div class="projetos-tags">
-                  <span class="tag">React</span>
-                  <span class="tag">Node.js</span>
-                  <span class="tag">TailwindCSS</span>
-                  <span class="tag">API</span>
-              </div>
-              <div class="projetos-links">
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Demo Online"><i class="fas fa-external-link-alt"></i> Demo</a>
-                 <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Código no GitHub"><i class="fab fa-github"></i> Código</a>
-              </div>
+          <h3 class="info-projetos">Tradutor</h3>
+          <p class="paragrafo-projetos">
+            Site de tradução, estilo Google Tradutor, utilizando Node para o Back-End e React com Tailwind para o
+            Front-End. Site responsivo e eficiente.
+          </p>
+          <div class="projetos-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">API</span>
+          </div>
+          <div class="projetos-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Demo Online"><i
+                class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="projeto-link" title="Ver Código no GitHub"><i
+                class="fab fa-github"></i> Código</a>
+          </div>
         </div>
       </div>
-      </div>
+    </div>
   </section>
 
   <section id="contato" class="contato section-padding">
     <h2 class="section-title animatable">Contato</h2>
     <div class="contato-container">
-        <div class="contato-info animatable" data-delay="100">
-            <h3>Entre em Contato</h3>
-            <p>Tem alguma pergunta ou proposta? Sinta-se à vontade para me enviar uma mensagem pelo formulário ao lado ou através dos canais abaixo.</p>
-            <ul>
-                <li><i class="fas fa-envelope"></i> tadllyhenzon@gmail.com</li>
-                <li><i class="fas fa-phone"></i> +55 (89) 98816-2522</li>
-                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/henzon/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><i class="fab fa-github"></i> <a href="https://github.com/Tadlly" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><i class="fas fa-map-marker-alt"></i> Picos, PI - Brasil</li>
-            </ul>
+      <div class="contato-info animatable" data-delay="100">
+        <h3>Entre em Contato</h3>
+        <p>Tem alguma pergunta ou proposta? Sinta-se à vontade para me enviar uma mensagem pelo formulário ao lado ou
+          através dos canais abaixo.</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i> tadllyhenzon@gmail.com</li>
+          <li><i class="fas fa-phone"></i> +55 (89) 98816-2522</li>
+          <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/henzon/" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a></li>
+          <li><i class="fab fa-github"></i> <a href="https://github.com/Tadlly" target="_blank"
+              rel="noopener noreferrer">GitHub</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> Picos, PI - Brasil</li>
+        </ul>
+      </div>
+      <form id="contact-form" class="formulario-contato animatable" data-delay="200">
+        <div class="form-group">
+          <label for="from_name">Nome:</label>
+          <input type="text" id="from_name" name="from_name" placeholder="Seu Nome Completo" class="campo-form"
+            required>
         </div>
-        <form id="contact-form" class="formulario-contato animatable" data-delay="200">
-          <div class="form-group">
-              <label for="from_name">Nome:</label>
-              <input type="text" id="from_name" name="from_name" placeholder="Seu Nome Completo" class="campo-form" required>
-          </div>
-           <div class="form-group">
-              <label for="reply_to">E-mail:</label>
-              <input type="email" id="reply_to" name="reply_to" placeholder="Seu Melhor E-mail" class="campo-form" required>
-           </div>
-          <div class="form-group">
-              <label for="message">Mensagem:</label>
-              <textarea id="message" name="message" placeholder="Digite sua mensagem aqui..." class="text-form" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-enviar">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
-          <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-        </form>
+        <div class="form-group">
+          <label for="reply_to">E-mail:</label>
+          <input type="email" id="reply_to" name="reply_to" placeholder="Seu Melhor E-mail" class="campo-form" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensagem:</label>
+          <textarea id="message" name="message" placeholder="Digite sua mensagem aqui..." class="text-form"
+            required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-enviar">Enviar Mensagem <i
+            class="fas fa-paper-plane"></i></button>
+        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </section>
 
@@ -186,13 +238,15 @@
   </div>
 
   <footer class="footer">
-     <div class="footer-content">
-        <div class="footer-social">
-            <a href="https://github.com/Tadlly" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/henzon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-         <p>&copy; <span id="year"></span> Henzon Tadlly. Todos os direitos reservados.</p>
-     </div>
+    <div class="footer-content">
+      <div class="footer-social">
+        <a href="https://github.com/Tadlly" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/henzon/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+            class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; <span id="year"></span> Henzon Tadlly. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
